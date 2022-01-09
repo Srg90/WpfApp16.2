@@ -1,0 +1,199 @@
+﻿<Window x:Class="WpfApp16._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp16._2"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="600" MinWidth="800" MaxHeight="520" MaxWidth="800">
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="Image/4.jpg" Stretch="UniformToFill"/>
+        </Canvas.Background>
+        <Path Data="M240.13453,224.17453 L779.43227,224.17453 780.73968,424.45881 18.421757,423.73309 239.76896,223.67335"
+              x:Name="field1"
+              Fill="LightGray" 
+              Height="202" 
+              Canvas.Left="-3.528" 
+              Stroke="Black" 
+              Stretch="Fill" 
+              Canvas.Top="363.206" 
+              Width="805" Opacity="0.5"/>
+        <Rectangle Height="177" Canvas.Left="661.883" Stroke="Black" Canvas.Top="206.305" Width="13" Fill="#FFE21212"/>
+        <Rectangle Height="63" Canvas.Left="597.883" Stroke="Black" Canvas.Top="143.305" Width="141" Fill="#FF00D6FF"/>
+        <Ellipse Height="15" Canvas.Left="630.883" Stroke="#FFE21212" Canvas.Top="181.868" Width="75" StrokeThickness="5" Panel.ZIndex="2"/>
+        <Rectangle Height="10" Canvas.Left="660.881" Stroke="Black" Canvas.Top="178.054" Width="16" Fill="#FFE21212" Panel.ZIndex="3"/>
+        <Path Data="M232.06278,346.25973 L170.51944,460.61444 300.96056,460.24725 356.6095,346.06941 232.17732,346.31853"
+              Height="50" 
+              Canvas.Left="168.98" 
+              Stroke="Black" 
+              Stretch="Fill" 
+              Canvas.Top="464.206" 
+              Width="139">
+            <Path.Fill>
+                <SolidColorBrush Color="#FF00C9FD" x:Name="field2"/>
+            </Path.Fill>
+            <Path.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                Storyboard.TargetName="field2"
+                                Storyboard.TargetProperty="Color"
+                                To="Yellow"
+                                Duration="0:0:0.8"
+                                RepeatBehavior="Forever"
+                                AutoReverse="True">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Path.Triggers>
+        </Path>
+        <Ellipse x:Name="ball"
+                 Height="60" Margin="0"
+                 Stroke="Black"
+                 Width="60" Canvas.Left="-40" Canvas.Top="295" Panel.ZIndex="1">
+            <Ellipse.Effect>
+                <DropShadowEffect/>
+            </Ellipse.Effect>
+            <Ellipse.Fill>
+                <RadialGradientBrush RadiusY="0.486" RadiusX="0.486" GradientOrigin="0.316, 0.293">
+                    <GradientStop Color="OrangeRed" Offset="1"/>
+                    <GradientStop Color="Orange" Offset="0.106"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames
+                                Storyboard.TargetProperty="(Canvas.Top)"
+                                Duration="0:0:6"
+                                RepeatBehavior="Forever"
+                                DecelerationRatio="0.7"
+                                AccelerationRatio="0.3">
+                                <LinearDoubleKeyFrame KeyTime="0%" Value="295"/>
+                                <LinearDoubleKeyFrame KeyTime="8%" Value="489"/>
+                                <LinearDoubleKeyFrame KeyTime="16%" Value="385"/>
+                                <LinearDoubleKeyFrame KeyTime="23%" Value="349"/>
+                                <LinearDoubleKeyFrame KeyTime="30%" Value="394"/>
+                                <LinearDoubleKeyFrame KeyTime="37%" Value="453"/>
+                                <LinearDoubleKeyFrame KeyTime="44%" Value="270"/>
+                                <LinearDoubleKeyFrame KeyTime="51%" Value="111"/>
+                                <LinearDoubleKeyFrame KeyTime="57%" Value="40"/>
+                                <LinearDoubleKeyFrame KeyTime="63%" Value="25"/>
+                                <LinearDoubleKeyFrame KeyTime="69%" Value="5"/>
+                                <LinearDoubleKeyFrame KeyTime="75%" Value="10"/>
+                                <LinearDoubleKeyFrame KeyTime="81%" Value="15"/>
+                                <LinearDoubleKeyFrame KeyTime="87%" Value="70"/>
+                                <LinearDoubleKeyFrame KeyTime="93%" Value="123"/>
+                                <LinearDoubleKeyFrame KeyTime="99%" Value="363"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                Duration="0:0:6"
+                                RepeatBehavior="Forever"
+                                DecelerationRatio="0.7"
+                                AccelerationRatio="0.3">
+                                <LinearDoubleKeyFrame KeyTime="0%" Value="-40"/>
+                                <LinearDoubleKeyFrame KeyTime="8%" Value="55"/>
+                                <LinearDoubleKeyFrame KeyTime="16%" Value="89"/>
+                                <LinearDoubleKeyFrame KeyTime="23%" Value="126"/>
+                                <LinearDoubleKeyFrame KeyTime="30%" Value="169"/>
+                                <LinearDoubleKeyFrame KeyTime="37%" Value="214"/>
+                                <LinearDoubleKeyFrame KeyTime="44%" Value="293"/>
+                                <LinearDoubleKeyFrame KeyTime="51%" Value="350"/>
+                                <LinearDoubleKeyFrame KeyTime="57%" Value="400"/>
+                                <LinearDoubleKeyFrame KeyTime="63%" Value="440"/>
+                                <LinearDoubleKeyFrame KeyTime="69%" Value="490"/>
+                                <LinearDoubleKeyFrame KeyTime="75%" Value="525"/>
+                                <LinearDoubleKeyFrame KeyTime="81%" Value="550"/>
+                                <LinearDoubleKeyFrame KeyTime="87%" Value="590"/>
+                                <LinearDoubleKeyFrame KeyTime="93%" Value="630"/>
+                                <LinearDoubleKeyFrame KeyTime="99%" Value="715"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="ball" Storyboard.TargetProperty="Height"
+                                From="60" To="40"
+                                Duration="0:0:6"
+                                RepeatBehavior="Forever">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="ball" Storyboard.TargetProperty="Width"
+                                From="60" To="40"
+                                Duration="0:0:6"
+                                RepeatBehavior="Forever">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+
+        <Ellipse Height="120" Canvas.Left="-20" Stroke="#FF00EDFF" Canvas.Top="275" Width="40" StrokeThickness="5">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4C99FF"/>
+                    <GradientStop Color="#FF04F7DB" Offset="1"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Path Data="M320,304.04 L419.5,304.04 C419.5,304.04 418.66246,283.54001 370.42003,283.54001 322.17761,283.54001 319.16246,304.36539 320,304.04 z" 
+              Height="20" 
+              Canvas.Left="695.891" 
+              Stroke="#FF00EDFF" StrokeThickness="5" 
+              Stretch="Fill" 
+              Canvas.Top="363.206" 
+              Width="100" RenderTransformOrigin="0.5,0.5" Opacity="0.8">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-28.61"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="5.455"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4C99FF" Offset="0"/>
+                    <GradientStop Color="#FF04F7DB" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Path Data="M320,304.04 L419.5,304.04 C419.5,304.04 418.66246,283.54001 370.42003,283.54001 322.17761,283.54001 319.16246,304.36539 320,304.04 z" 
+              Height="34" 
+              Canvas.Left="693.978" 
+              Stroke="#FF00EDFF" StrokeThickness="5" 
+              Stretch="Fill" 
+              Canvas.Top="378.636" 
+              Width="100" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="2" Opacity="0.935">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform AngleX="-40.014"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-10.494"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF20D3E9" Offset="0"/>
+                    <GradientStop Color="#FF04F7DB" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+    </Canvas>
+</Window>
